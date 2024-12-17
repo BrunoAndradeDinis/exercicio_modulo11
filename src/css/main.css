@@ -1,0 +1,345 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:"Quicksand", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+:root{
+  --bg-color-1: rgb(250, 235, 215);
+  --bg-color-2: #2176AE;
+  --bg-color-3: #57b8ff;
+  --text-color-1: #070606;
+  --text-color-2: #fff;
+  --color-flex-1: #b66d0d;
+  --color-flex-2: #fbb13c;
+  --color-flex-3: #fe6847;
+  --color-flex-4: #f7f052;
+}
+
+body{
+  background-color: var(--bg-color-1);
+  color: var(--text-color-1);
+  margin: 0 auto;
+  
+}
+
+h1, h2, h3{
+  font-family: Ranchers, sans-serif;
+  letter-spacing: .3ch;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: var(--bg-color-2);
+  color: var(--text-color-2);
+  position: sticky;
+  top: 0;
+  transition: .3s ease-in;
+  z-index: 1;
+}
+
+.cabecalho__titulo a{
+  color: var(--text-color-2);
+  font-family: Ranchers, sans-serif;
+  display: inline-block;
+}
+
+.cabecalho__titulo a:hover{
+  transform: rotate(-3deg);
+}
+
+.cabecalho__nav {
+  padding: 0 auto;
+}
+.cabecalho__nav .cabecalho__lista{
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.cabecalho__nav a{
+  color: var(--text-color-2);
+  font-size: 1.25rem;
+}
+
+.cabecalho__lista li a {
+  position: relative; 
+  padding-left: 1.8rem; 
+  font-size: 1rem; 
+}
+
+.cabecalho__lista li a::before {
+  content: ''; 
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: .3s ease, transform .3s ease;
+}
+
+.cabecalho__lista li a:hover::before {
+  content: '🐾'; 
+  opacity: 1; 
+  transform: rotate(-15deg); 
+}
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem auto;
+  margin: 0 auto;
+  background-color: var(--text-color-2);
+  max-width: 70vw;
+}
+
+section{
+  max-width: 90%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: .5rem;
+  width: 100%;
+}
+
+.principal__adote{
+  background-color: var(--color-flex-1);
+}
+
+.principal__adote #adote-slider{
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.principal__adote img{
+  width: 180px;
+  height: 200px;
+  border-radius: .5rem;
+  object-fit: cover;
+}
+
+.principal__sobre{
+  background-color: var(--color-flex-2);
+  color: var(--text-color-1);
+}
+
+.principal__sobre--article{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.principal__sobre--article img{
+  border-radius: .5rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.principal__sobre--article p{
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  margin: 2rem 0;
+  line-break: normal;
+}
+
+.principal__cachorros{
+  background-color: var(--color-flex-4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.principal__cachorros .principal__cachorros--cachorro{
+  padding: .5rem 0 0 0;
+  height: 60vh;
+  margin: 0 0 0 .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: .25rem;
+}
+
+.principal__cachorros .principal__cachorros--cachorro img{
+  width: 100%;
+  height: 200px;
+  min-height: 170px;
+  border-radius: .5rem;
+  object-fit: cover;
+}
+
+.principal__cachorros .principal__cachorros--cachorro button{
+  width: 100%;
+  background-color: var(--bg-color-3);
+  border: none;
+  padding: .5rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  margin: .5rem 0;
+  color: var(--text-color-2);
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.principal__cachorros .principal__cachorros--cachorro button:hover{
+  opacity: .7;
+}
+
+.principal__cachorros > div:first-child{
+  grid-column: span 3;
+  grid-row: span 1;
+  width: 50%;
+}
+
+.principal__cadastros{
+  background-color: var(--color-flex-2);
+  display: none; /* display none para o evento de fadeIn*/
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  font-weight: bold;
+  padding-bottom: 1.5rem;
+}
+
+.principal__cadastros > div:first-child{
+  width: 50%;
+  margin: 0;
+}
+
+.principal__cadastros .principal__cadastros--adocao img{
+  border-radius: .5rem;
+  max-width: 500px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.principal__cadastros div{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  max-width: 90%;
+  margin: .25rem auto;
+  justify-content: center;
+  width: 100%;
+  padding: .25rem;
+}
+
+.principal__cadastros div label{
+  font-size: 1.25rem;
+}
+
+.principal__cadastros div input{
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  outline: none;
+  outline-width: 0;
+  border: none;
+  transform: scale(1.01);
+}
+
+.principal__cadastros div button{
+  background-color: var(--bg-color-3);
+  border: none;
+  padding: .5rem;
+  border-radius: .5rem;
+  color: var(--text-color-2);
+  text-transform: uppercase;
+  font-weight: bolder;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.principal__cadastros div button:hover{
+  opacity: .7;
+}
+
+.rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: var(--bg-color-2);
+  color: var(--text-color-2);
+  height: 12vh;
+}
+
+@media screen and (max-width: 640px) {
+  .cabecalho{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cabecalho__nav{
+    margin: .5rem auto;
+  }
+
+  .cabecalho__lista li a {
+    padding: 0;
+  }
+
+  .cabecalho__lista li a::after, .cabecalho__lista li a:hover::before{
+    content: '';
+  }
+
+  .principal{
+    width: 100vw;
+    margin: 0 auto;
+  }
+
+  .principal__adote #adote-slider img{
+    width: 100%;
+    height: 50vh;
+  }
+
+  .principal__sobre--article{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .principal__sobre--article p{
+    padding-top:0 ;
+    margin-top: 0;
+  }
+
+  .principal__cachorros{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .principal__cadastros > div:first-child{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+  .principal__cachorros{
+    grid-template-columns: repeat(2, 2fr);
+  }
+
+  .principal__cachorros > div:first-child{
+    grid-column: span 2;
+    grid-row: span 1;
+    width: 50%;
+  }
+  
+  .principal__cachorros .principal__cachorros--cachorro img{
+    max-height: 150px;
+    min-height: 89.59px;
+  }
+
+  .principal__cachorros .principal__cachorros--cachorro h3{
+    font-size: 1rem;
+  }
+}
